@@ -93,6 +93,18 @@ class ArtistManagerTestCase(TestCase):
         self.assertIn(funded_campaign.project.artist, funded_artists)
         self.assertNotIn(artist_without_campaign, funded_artists)
 
+    def testOrderByPercentageFunded(self):
+        funded_campaign = CampaignFactory()
+        artist_without_campaign = ArtistFactory()
+
+        ordered_artists = Artist.objects.order_by_percentage_funded()
+
+        # Validate that artists without campaigns come last
+        self.assertEqual(
+            list(ordered_artists),
+            [funded_campaign.project.artist, artist_without_campaign],
+        )
+
 
 class ArtistAdminWebTestCase(PerDiemTestCase):
     def testLocationWidgetRenders(self):

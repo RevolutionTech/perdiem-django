@@ -78,7 +78,9 @@ class ArtistQuerySet(models.QuerySet):
 
     # TODO(lucas): Use annotations as much as possible to improve performance
     def order_by_percentage_funded(self):
-        return sorted(self, key=self.percentage_funded, reverse=True)
+        return sorted(
+            self, key=lambda artist: self.percentage_funded(artist) or 0, reverse=True
+        )
 
     def order_by_time_remaining(self):
         artists = self.annotate(
