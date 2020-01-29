@@ -36,7 +36,8 @@ class Album(models.Model):
 
     def validate_unique(self, exclude=None):
         if (
-            Album.objects.exclude(id=self.id)
+            self.project_id
+            and Album.objects.exclude(id=self.id)
             .filter(project__artist=self.project.artist, slug=self.slug)
             .exists()
         ):
