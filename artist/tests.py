@@ -4,6 +4,7 @@
 
 """
 import datetime
+import inspect
 from unittest import mock
 
 from django.core.management import call_command
@@ -93,17 +94,28 @@ class ArtistManagerTestCase(TestCase):
         self.assertIn(funded_campaign.project.artist, funded_artists)
         self.assertNotIn(artist_without_campaign, funded_artists)
 
-    def testOrderByPercentageFunded(self):
+    def testOrderArtistsWithoutCampaign(self):
         funded_campaign = CampaignFactory()
+        InvestmentFactory(campaign=funded_campaign)
+        funded_artist = funded_campaign.project.artist
         artist_without_campaign = ArtistFactory()
 
-        ordered_artists = Artist.objects.order_by_percentage_funded()
+        custom_ordering_methods = [
+            method
+            for method, _ in inspect.getmembers(
+                Artist.objects, predicate=inspect.ismethod
+            )
+            if method.startswith("order_by_")
+        ]
+        for ordering_method in custom_ordering_methods:
+            ordered_artists = getattr(Artist.objects, ordering_method)()
 
-        # Validate that artists without campaigns come last
-        self.assertEqual(
-            list(ordered_artists),
-            [funded_campaign.project.artist, artist_without_campaign],
-        )
+            # Validate that artists without campaigns come last
+            self.assertEqual(
+                list(ordered_artists),
+                [funded_artist, artist_without_campaign],
+                f"Artists was in the wrong order for {ordering_method}.",
+            )
 
 
 class ArtistAdminWebTestCase(PerDiemTestCase):

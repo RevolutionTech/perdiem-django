@@ -136,4 +136,6 @@ class ArtistQuerySet(models.QuerySet):
         ).order_by("-amount_raised")
 
     def order_by_valuation(self):
-        return sorted(self, key=self.valuation, reverse=True)
+        return sorted(
+            self, key=lambda artist: self.valuation(artist) or 0, reverse=True
+        )
