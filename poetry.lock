@@ -199,7 +199,7 @@ description = "A widget to replace the object_id in a generic relation with a se
 name = "django-gfklookupwidget"
 optional = false
 python-versions = "*"
-version = "1.0.7"
+version = "1.0.8"
 
 [[package]]
 category = "main"
@@ -757,7 +757,7 @@ python-versions = ">=3.5, <4"
 version = "5.0.1"
 
 [metadata]
-content-hash = "91bb84a7b82b560a3c04067de727f6cd353183834c78800ae93b0c212a237900"
+content-hash = "7176eeb41838833f232d9f8d443513a500fad1f1d27b479ed61d4ae61d7be4b1"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -779,7 +779,7 @@ defusedxml = ["6687150770438374ab581bb7a1b327a847dd9c5749e396102de3fad4e8a3ef93"
 django = ["a4ad4f6f9c6a4b7af7e2deec8d0cbff28501852e5010d6c2dc695d3d1fae7ca0", "fa98ec9cc9bf5d72a08ebf3654a9452e761fbb8566e3f80de199cbc15477e891"]
 django-appconf = ["35f13ca4d567f132b960e2cd4c832c2d03cb6543452d34e29b7ba10371ba80e3", "c98a7af40062e996b921f5962a1c4f3f0c979fa7885f7be4710cceb90ebe13a6"]
 django-classbasedsettings = ["c85708a85614c671e81d75e8781691c0e69a173ea6d25e54b366d6004dd8c5ee"]
-django-gfklookupwidget = ["8e3f00268438c3bb1e1947418136f791fb581babe04560f70587f60033eb9ad9"]
+django-gfklookupwidget = ["1fa7c5e9c56445a79171f669eba2b7581a311cddfb80245e92d725d806e8f90f"]
 django-ipware = ["a7c7a8fd019dbdc9c357e6e582f65034e897572fc79a7e467674efa8aef9d00b"]
 django-markdown-deux = ["5b4a3cd9454af5b4cec0e19151b41d98d09400ddae0688afb81dbf62a4edafff"]
 django-pagedown = ["2558c14167baf05bb5205dccd880d1efc62b3a16530d98b165dc85fc26692eb1", "83b30134131a49358196f8c2f0e2e25d730ee7a820482a7fda5ef386c22b1d6c"]
