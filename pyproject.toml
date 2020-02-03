@@ -36,7 +36,7 @@ sentry-sdk = "^0.13.5"
 factory-boy = "^2.12.0"
 coverage = "^5.0.1"
 black = {version = "^19.10b0",allows-prereleases = true}
-pyupgrade = "^1.25"
+pyupgrade = "^1.26"
 
 [tool.black]
 line-length = 88
