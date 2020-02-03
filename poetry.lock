@@ -272,7 +272,7 @@ description = "A Django email backend for Amazon's Simple Email Service"
 name = "django-ses"
 optional = false
 python-versions = "*"
-version = "0.8.13"
+version = "0.8.14"
 
 [package.dependencies]
 boto = ">=2.31.0"
@@ -757,7 +757,7 @@ python-versions = ">=3.5, <4"
 version = "5.0.1"
 
 [metadata]
-content-hash = "ba2b8d561fba9eb1f4743d08a76bd885d7fd354933502f9bc8cbdefd5d88c254"
+content-hash = "91bb84a7b82b560a3c04067de727f6cd353183834c78800ae93b0c212a237900"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -786,7 +786,7 @@ django-pagedown = ["2558c14167baf05bb5205dccd880d1efc62b3a16530d98b165dc85fc2669
 django-pigeon = ["ae7433109d944a2236223b4f61baf8e19043fea35c0a949e1edd1fb79cc94b18"]
 django-render-block = ["0eab0c4ef1b99ad307e1bd1bdd0daa6ee4252bc39363b1b30b29cf675b840968"]
 django-s3-storage = ["53c0d5a6b5064073246c120c67dbe011c16f27f77bd195573bccfd4c38756f83"]
-django-ses = ["8c9ded374a7f2b36300a8e3daa472cfebba339736efc5f57c98cb25c1e2ee23d", "f9769f684e7211132f17117e60b4418f121e474f0955e05075e491caaa21d834"]
+django-ses = ["0077b9a70a0e1a8c4eb13c55451663fbca3b0bb14f462ed73eeb56aa330ab1ce", "ad45fca653db1725d2237d5aa1a4e2705789088717d69b9a91e4a1c7688896b5"]
 django-templated-email = ["536c4e5ae099eabfb9aab36087d4d7799948c654e73da55a744213d086d5bb33"]
 djangorestframework = ["05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4", "e782087823c47a26826ee5b6fa0c542968219263fb3976ec3c31edab23a4001f"]
 docutils = ["02aec4bd92ab067f6ff27a38a38a41173bf01bed8f89157768c1573f53e474a6", "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274", "7a4bd47eaf6596e1295ecb11361139febe29b084a87bf005bf899f9a42edc3c6"]
