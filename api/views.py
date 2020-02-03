@@ -101,13 +101,25 @@ class PaymentCharge(APIView):
             card = Card.objects.get(customer=customer)
         else:
             # Check if we have the card the user is using
-            # and if not, create it
-            card_fingerprint = stripe.Token.retrieve(card)["card"]["fingerprint"]
+            # If we do, update it
+            # If not, create it
+            stripe_card = stripe.Token.retrieve(card)["card"]
             cards_with_fingerprint = Card.objects.filter(
-                customer=customer, fingerprint=card_fingerprint
+                customer=customer, fingerprint=stripe_card["fingerprint"]
             )
             if cards_with_fingerprint.exists():
-                card = cards_with_fingerprint[0]
+                try:
+                    card = sources.update_card(
+                        customer=customer,
+                        source=card,
+                        exp_month=stripe_card["exp_month"],
+                        exp_year=stripe_card["exp_year"],
+                    )
+                except stripe.error.InvalidRequestError:
+                    # Sometimes Stripe does not recognize the source
+                    # even though we seem to have it
+                    # in those cases just re-create the source
+                    card = sources.create_card(customer=customer, token=card)
             else:
                 card = sources.create_card(customer=customer, token=card)
 
@@ -118,8 +130,8 @@ class PaymentCharge(APIView):
             charge = charges.create(
                 amount=amount, customer=customer.stripe_id, source=card
             )
-        except stripe.CardError as e:
-            return Response(e.message, status=status.HTTP_400_BAD_REQUEST)
+        except stripe.error.CardError as e:
+            return Response(e.user_message, status=status.HTTP_400_BAD_REQUEST)
         Investment.objects.create(
             charge=charge, campaign=campaign, num_shares=num_shares
         )
