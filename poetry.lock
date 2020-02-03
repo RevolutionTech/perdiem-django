@@ -684,8 +684,8 @@ category = "main"
 description = "Thumbnails for Django"
 name = "sorl-thumbnail"
 optional = false
-python-versions = "*"
-version = "12.5.0"
+python-versions = ">=3.4"
+version = "12.6.2"
 
 [[package]]
 category = "main"
@@ -757,7 +757,7 @@ python-versions = ">=3.5, <4"
 version = "5.0.1"
 
 [metadata]
-content-hash = "7176eeb41838833f232d9f8d443513a500fad1f1d27b479ed61d4ae61d7be4b1"
+content-hash = "67eadfba22498db6d1fe2ea899f16f5974e2c0fcc67ae28cffa94db81168bc43"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -825,7 +825,7 @@ sentry-sdk = ["05285942901d38c7ce2498aba50d8e87b361fc603281a5902dda98f3f8c5e145"
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
 social-auth-app-django = ["6d0dd18c2d9e71ca545097d57b44d26f59e624a12833078e8e52f91baf849778", "9237e3d7b6f6f59494c3b02e0cce6efc69c9d33ad9d1a064e3b2318bcbe89ae3", "f151396e5b16e2eee12cd2e211004257826ece24fc4ae97a147df386c1cd7082"]
 social-auth-core = ["47cd2458c8fefd02466b0c514643e02ad8b61d8b4b69f7573e80882e3a97b0f0", "8320666548a532eb158968eda542bbe1863682357c432d8c4e28034a7f1e3b58", "d81ed681e3c0722300b61a0792c5db5d21206793f95ca810f010c1cc931c8d89"]
-sorl-thumbnail = ["8dfe5fda91a5047d1d35a0b9effe7b000764a01d648e15ca076f44e9c34b6dbd", "d9e3f018d19293824803e4ffead96b19dfcd44fa7987cea392f50436817bef34"]
+sorl-thumbnail = ["838e1b7907eec6039471f3604ac1ac9cdb9e8cabecde17330599bca61c28d48c", "ab42da28892f5aa4d95fb84f1a9f498af3a0535fd27d5cc501b11f87903fe8c4"]
 sqlparse = ["40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177", "7c3dca29c022744e95b547e867cee89f4fce4373f3549ccd8797d8eb52cdb873"]
 stripe = ["43cf1addbd5685d166c483f29f2b13e514304b091086561c2e22a3c7664043a2", "814e6a87fdb679cf2ddca9a12099a93aaf437dac0b09edac4851c6ba9ebd7e5f"]
 text-unidecode = ["5a1375bb2ba7968740508ae38d92e1f889a0832913cb1c447d5e2046061a396d", "801e38bd550b943563660a91de8d4b6fa5df60a542be9093f7abf819f86050cc"]
