@@ -107,7 +107,6 @@ class BaseSettings(DjangoDefaults):
                     "perdiem.context_processors.request",
                     "accounts.context_processors.keys",
                     "accounts.context_processors.profile",
-                    "artist.context_processors.artist_settings",
                 ]
             },
         }
@@ -218,7 +217,7 @@ class BaseSettings(DjangoDefaults):
     PINAX_STRIPE_PUBLIC_KEY = os.environ["PERDIEM_STRIPE_PUBLIC_KEY"]
     PINAX_STRIPE_SECRET_KEY = os.environ["PERDIEM_STRIPE_SECRET_KEY"]
     PINAX_STRIPE_SEND_EMAIL_RECEIPTS = False
-    PERDIEM_FEE = 1  # $1
+    PERDIEM_PERCENTAGE = 0.1  # 10%
     STRIPE_PERCENTAGE = 0.029  # 2.9%
     STRIPE_FLAT_FEE = 0.3  # $0.30
     DEFAULT_MIN_PURCHASE = 1  # $1

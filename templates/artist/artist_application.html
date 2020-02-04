@@ -13,6 +13,9 @@
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
+            <p>
+                I understand that PerDiem will exclusively distribute the music project (free of charge) for the payback period listed in this form. All royalties (100%) will be split between the artist(s) and investors based on the artist(s)' terms.
+            </p>
             <input type="submit" value="Submit" />
         </form>
     </div>

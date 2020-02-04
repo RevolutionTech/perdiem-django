@@ -3,23 +3,23 @@
 {% block email_subject %}Welcome to PerDiem!{% endblock %}
 
 {% block plain_body %}
-    Thanks for joining PerDiem!
+    Thanks for your interest in supporting a new generation of artists and contributing to the progression of their careers. We're excited to have you on board!
 
     {% if verify_email_url %}
         Please go to the following link to verify your email address:
         {{ host }}{{ verify_email_url }}
     {% endif %}
 
-    Discover artists on PerDiem:
+    You are now able to discover and invest in emerging artists through the platform. Please read over our FAQ and For Investors to get a better understanding of how investing works. We're constantly making updates and improving the site so be sure to subscribe and stay updated with all the latest info.
     {{ host }}{% url 'artists' %}
 {% endblock %}
 
 {% block html_body %}
-    <p>Thanks for joining PerDiem!</p>
+    <p>Thanks for your interest in supporting a new generation of artists and contributing to the progression of their careers. We're excited to have you on board!</p>
 
     {% if verify_email_url %}
         <p>Please <a href="{{ host }}{{ verify_email_url }}">click here</a> to verify your email address.</p>
     {% endif %}
-
+    <p>You are now able to <a href="{{ host }}{% url 'artists' %}">discover and invest</a> in emerging artists through the platform. Please read over our <a href="{{ host }}{% url 'faq' %}">FAQ</a> and <a href="{{ host }}{% url 'investor-resources' %}">For Investors</a> to get a better understanding of how investing works. We're constantly making updates and improving the site so be sure to subscribe and stay updated with all the latest info.</p>
     <p><a href="{{ host }}{% url 'artists' %}">Discover artists</a> on PerDiem.</p>
 {% endblock %}

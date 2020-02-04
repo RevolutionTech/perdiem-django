@@ -61,7 +61,7 @@
     <script type="text/javascript" src="{% static "js/vendor/Chart.min.js" %}"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script type="text/javascript">
-        var perdiem_fee = {{ PERDIEM_FEE }};
+        var perdiem_percentage = {{ PERDIEM_PERCENTAGE }};
         var stripe_percentage = {{ STRIPE_PERCENTAGE }};
         var stripe_flat_fee = {{ STRIPE_FLAT_FEE }};
         var artist_name = '{{ artist.name|escapejs }}'

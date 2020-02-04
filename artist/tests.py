@@ -191,6 +191,7 @@ class ArtistWebTestCase(PerDiemTestCase):
                     "We are a really cool heavy metal band. We mostly perform covers but are excited to "
                     "create an album, and we're hoping PerDiem can help us do that."
                 ),
+                "project": "Access Granted",
                 "campaign_reason": "We want to record our next album: Access Granted.",
                 "amount_raising": "$1000",
                 "giving_back": "50%",

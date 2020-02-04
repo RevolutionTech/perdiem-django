@@ -138,9 +138,10 @@ class Campaign(models.Model):
 
     def total(self, num_shares):
         subtotal = num_shares * self.value_per_share
-        total = (settings.PERDIEM_FEE + subtotal) * (
-            1 + settings.STRIPE_PERCENTAGE
-        ) + settings.STRIPE_FLAT_FEE
+        total = (
+            subtotal * (1 + settings.PERDIEM_PERCENTAGE + settings.STRIPE_PERCENTAGE)
+            + settings.STRIPE_FLAT_FEE
+        )
         return math.ceil(total * 100.0) / 100.0
 
     def num_shares(self):

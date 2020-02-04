@@ -25,6 +25,10 @@ class ArtistApplyForm(forms.Form):
             attrs={"placeholder": "We started playing music because..."}
         )
     )
+    project = forms.CharField(
+        label="Project Name",
+        widget=forms.TextInput(attrs={"placeholder": "Single/Album Name"}),
+    )
     campaign_reason = forms.CharField(
         label="What are you raising money for?",
         widget=forms.Textarea(

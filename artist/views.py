@@ -144,6 +144,7 @@ class ArtistDetailView(FormView):
         context.update(
             {
                 "PINAX_STRIPE_PUBLIC_KEY": settings.PINAX_STRIPE_PUBLIC_KEY,
+                "PERDIEM_PERCENTAGE": settings.PERDIEM_PERCENTAGE,
                 "STRIPE_PERCENTAGE": settings.STRIPE_PERCENTAGE,
                 "STRIPE_FLAT_FEE": settings.STRIPE_FLAT_FEE,
                 "DEFAULT_MIN_PURCHASE": settings.DEFAULT_MIN_PURCHASE,
