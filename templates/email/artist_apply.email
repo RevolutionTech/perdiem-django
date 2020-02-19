@@ -16,6 +16,7 @@
     Phone number: {{ phone_number }}
 
     Campaign Details:
+    Project: {{ project }}
     Reason: {{ campaign_reason }}
     Amount Raising: {{ amount_raising }}
     Giving Back: {{ giving_back }}
@@ -56,6 +57,7 @@
 
     <strong>Campaign Details</strong>
     <ul>
+        <li>Project: {{ project }}</li>
         <li>Reason: {{ campaign_reason }}</li>
         <li>Amount Raising: {{ amount_raising }}</li>
         <li>Giving Back: {{ giving_back }}</li>
