@@ -7,35 +7,37 @@
 import os
 
 import requests
-from fabric.api import env, run, sudo
-from fabric.context_managers import cd
+from fabric import task
 
 PROJECT_DIR = "~/perdiem-django"
+REMOTE_HOSTS = os.environ.get("PERDIEM_REMOTE_HOSTS", "").split(",")
 
-env.hosts = os.environ.get("PERDIEM_REMOTE_HOSTS", "").split(",")
+remote_task = task(hosts=REMOTE_HOSTS)
 
 
-def _pull_latest_changes():
+def _pull_latest_changes(cxn):
     """
     Pull latest code from origin
     :return: Description of the changes since the last deploy
     """
-    with cd(PROJECT_DIR):
-        previous_commit_hash = run("git rev-parse HEAD", pty=False)
-        run("git pull")
+    with cxn.cd(PROJECT_DIR):
+        previous_commit_hash = cxn.run(
+            "git rev-parse HEAD", hide="stdout"
+        ).stdout.strip()
+        cxn.run("git pull", echo=True)
         cmd_changes_pulled = f'git log {previous_commit_hash}.. --reverse --format="%h : %an : %s" --no-color'
-        changes_pulled = run(cmd_changes_pulled, pty=False)
+        changes_pulled = cxn.run(cmd_changes_pulled, hide="stdout").stdout.strip()
     return changes_pulled
 
 
-def _perform_update():
+def _perform_update(cxn):
     """
     Update dependencies, run migrations, etc.
     """
-    with cd(PROJECT_DIR):
-        run("poetry install --no-dev")
-        run("poetry run python manage.py migrate")
-        run("poetry run python manage.py collectstatic --no-input")
+    with cxn.cd(PROJECT_DIR):
+        cxn.run("poetry install --no-dev", echo=True)
+        cxn.run("poetry run python manage.py migrate", echo=True)
+        cxn.run("poetry run python manage.py collectstatic --no-input", echo=True)
 
 
 def _send_notification(commits, deploy_successful):
@@ -61,24 +63,26 @@ def _send_notification(commits, deploy_successful):
     requests.post("https://slack.com/api/chat.postMessage", data=data)
 
 
-def restart():
+@remote_task
+def restart(cxn):
     """
     Restart services
     """
-    sudo("sv restart perdiem")
-    sudo("service nginx restart")
+    cxn.sudo("sv restart perdiem", echo=True)
+    cxn.sudo("service nginx restart", echo=True)
 
 
-def deploy():
+@remote_task
+def deploy(cxn):
     """
     Perform update, restart services, and send notification to Slack
     """
-    changes_pulled = _pull_latest_changes()
+    changes_pulled = _pull_latest_changes(cxn)
 
     deploy_successful = False
     try:
-        _perform_update()
-        restart()
+        _perform_update(cxn)
+        restart(cxn)
         deploy_successful = True
     finally:
         _send_notification(changes_pulled, deploy_successful)
