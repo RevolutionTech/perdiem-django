@@ -13,9 +13,8 @@
         <h3 class="public-profile-name">{{ profile_user.userprofile.get_display_name }}</h3>
     </div>
     <div>
-        <h2 class="green-color">{{ profile.percentage|floatformat:0|intcomma }}%</h2>
+        <h2 class="green-color">${{ profile.total_earned|floatformat:2|intcomma }}</h2>
     </div>
-
     <div class="break">
         <hr>
     </div>

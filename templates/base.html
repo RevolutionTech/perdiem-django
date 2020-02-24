@@ -129,6 +129,7 @@
                     <div class="top-bar-right login-item">
                         <ul class="menu">
                             <li class="nav"><a href="{% url 'home' %}#video-page">About</a></li>
+                            <li class="nav"><a href="{% url 'artists' %}">Artists</a></li>
                             <li class="nav"><a href="{% url 'faq' %}">FAQ</a></li>
                             <li class="nav"><a href="{% url 'register' %}?next={{ request.get_full_path }}">Sign Up</a></li>
                             <li class="nav"><a data-open="login-modal">Login</a></li>
@@ -146,6 +147,7 @@
                     <div class="top-bar-right login-item">
                         <ul class="menu">
                             <li class="nav"><a href="{% url 'home' %}#video-page">About</a></li>
+                            <li class="nav"><a href="{% url 'artists' %}">Artists</a></li>
                             <li class="nav"><a href="{% url 'faq' %}">FAQ</a></li>
                             <li class="color-blue nav"><a href="{% url 'register' %}?next={{ request.get_full_path }}">Sign Up</a></li>
                             <li class="nav"><a data-open="login-modal">Login</a></li>

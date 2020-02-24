@@ -21,6 +21,7 @@
                         <img class="profile-crop" src="{{ leader_context.avatar_url }}" alt="{{ leader_context.name }}" />
                         <br/>
                         <h4 class="chart-name">#{{ forloop.counter }}: {{ leader_context.name }}</h4>
+                        <h4 class="chart-amount">${{ leader_context.amount|notrail_floatformat:2|intcomma }}</h4>
                     </div>
                 </a>
             {% endfor %}
