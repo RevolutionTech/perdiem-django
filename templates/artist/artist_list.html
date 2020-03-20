@@ -91,23 +91,15 @@
             <div class="column">
                 <div class="artist-list-image img-list">
                     {% include "object_preview.html" with object=artist img=artist.photo.img %}
-                    {% if campaign_status != 'Funded' %}
-                         {% with latest_campaign=artist.latest_campaign %}
-                             {% if not latest_campaign %}
-                                 <h2 class="artist-list-overlay banner-coming">COMING SOON</h2>
-                             {% elif latest_campaign.percentage_funded == 100 %}
-                                 <h2 class="artist-list-overlay banner-funded">FUNDED</h2>
-                             {% elif latest_campaign.open %}
-                                 <h2 class="artist-list-overlay banner-active">
-                                    {% if latest_campaign.percentage_funded %}
-                                        {{ latest_campaign.percentage_funded }}% FUNDED
-                                    {% elif campaign_status == 'Recent' %}
-                                        ACTIVE
-                                    {% endif %}
-                                </h2>
-                            {% endif %}
-                        {% endwith %}
-                    {% endif %}
+                    {% with latest_campaign=artist.latest_campaign %}
+                        {% if not latest_campaign %}
+                            <h2 class="artist-list-overlay banner-coming">COMING SOON</h2>
+                        {% elif latest_campaign.percentage_funded == 100 %}
+                            <h2 class="artist-list-overlay banner-funded">FUNDED</h2>
+                        {% elif latest_campaign.open %}
+                            <h2 class="artist-list-overlay banner-active">ACTIVE</h2>
+                        {% endif %}
+                    {% endwith %}
                 </div>
                 {% if order_by.slug == 'funded' %}
                     <p class="artist-details artist-location">
