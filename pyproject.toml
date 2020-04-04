@@ -29,7 +29,7 @@ django-markdown-deux = "^1.0.5"
 django-pagedown = "^2.0.3"
 django-gfklookupwidget = "^1.0.8"
 python-dotenv = "^0.10.5"
-sentry-sdk = "^0.14.1"
+sentry-sdk = "^0.14.3"
 fabric = "^2.5"
 
 [tool.poetry.dev-dependencies]
