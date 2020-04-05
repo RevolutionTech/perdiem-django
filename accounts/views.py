@@ -162,9 +162,7 @@ class EmailPreferencesFormView(ConstituentFormView):
             subscribed = EmailSubscription.objects.is_subscribed(
                 user=self.request.user, subscription_type=subscription_type
             )
-            initial[
-                "subscription_{stype}".format(stype=subscription_type.lower())
-            ] = subscribed
+            initial[f"subscription_{subscription_type.lower()}"] = subscribed
         return initial
 
     def form_valid(self, form):
