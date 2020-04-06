@@ -33,7 +33,7 @@ Before deploying, you will need to add some additional environment variables to 
 
 PerDiem uses Gunicorn with [runit](http://smarden.org/runit/) and [Nginx](http://nginx.org/). You can install them with the following:
 
-    $ sudo apt-get install runit nginx
+    $ sudo apt-get install runit runit-systemd nginx
 
 The rest of the README assumes that the PerDiem repo was checked out in `/home/perdiem/`. Please replace this path as necessary.
 
