@@ -6,7 +6,7 @@ authors = ["Lucas Connors <lucas@revolutiontech.ca>", "localastronaut"]
 license = "ISC"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.8"
 Django = "~2.2.10"
 gunicorn = "^20.0.4"
 psycopg2 = "=2.8.4"
@@ -40,7 +40,7 @@ pyupgrade = "^2.0"
 
 [tool.black]
 line-length = 88
-target_version = ["py36"]
+target_version = ["py38"]
 
 [build-system]
 requires = ["poetry>=1.0"]

@@ -851,8 +851,8 @@ version = "5.0.1"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "463c65ed2c84d2041e13802c7a56c1410886d25dcdc3347bfdcced5e8e23f85d"
-python-versions = "^3.6"
+content-hash = "10e30a8c090a68d0c54921dea5863ed68ee4bbdbc8870c64e8f0085d85440eef"
+python-versions = "^3.8"
 
 [metadata.files]
 appdirs = [

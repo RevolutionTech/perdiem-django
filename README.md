@@ -52,7 +52,7 @@ In this file, create a script similar to the following:
 
     #!/bin/sh
 
-    GUNICORN=/home/perdiem/.cache/pypoetry/virtualenvs/perdiem-django-py3.6/bin/gunicorn
+    GUNICORN=/home/perdiem/.cache/pypoetry/virtualenvs/perdiem-django-py3.8/bin/gunicorn
     ROOT=/home/perdiem/perdiem-django
     PID=/var/run/gunicorn.pid
 
