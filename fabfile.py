@@ -34,7 +34,9 @@ def _perform_update(cxn):
     """
     Update dependencies, run migrations, etc.
     """
-    with cxn.cd(PROJECT_DIR):
+    with cxn.prefix("export PATH=$HOME/.pyenv/bin:$HOME/.poetry/bin:$PATH"), cxn.cd(
+        PROJECT_DIR
+    ), cxn.prefix('eval "$(pyenv init -)"'):
         cxn.run("poetry install --no-dev", echo=True)
         cxn.run("poetry run python manage.py migrate", echo=True)
         cxn.run("poetry run python manage.py collectstatic --no-input", echo=True)
