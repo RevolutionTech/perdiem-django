@@ -19,6 +19,7 @@ before_script:
 script:
   - poetry run pyupgrade --py37-plus $(find . -name '*.py')
   - poetry run black . --check
+  - poetry run python manage.py makemigrations --check  # validate no outstanding model changes
   - poetry run python manage.py migrate
   - poetry run python manage.py collectstatic --no-input
   - poetry run coverage run ./manage.py test
