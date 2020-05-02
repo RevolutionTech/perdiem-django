@@ -28,7 +28,7 @@ django-templated-email = "^2.3.0"
 django-markdown-deux = "^1.0.5"
 django-pagedown = "^2.0.3"
 django-gfklookupwidget = "^1.0.8"
-python-dotenv = "^0.12.0"
+python-dotenv = "^0.13.0"
 sentry-sdk = "^0.14.3"
 fabric = "^2.5"
 
