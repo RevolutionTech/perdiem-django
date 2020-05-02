@@ -34,7 +34,7 @@ fabric = "^2.5"
 
 [tool.poetry.dev-dependencies]
 factory-boy = "^2.12.0"
-coverage = "^5.0.4"
+coverage = "^5.1"
 black = "^19.10b0"
 pyupgrade = "^2.0"
 
