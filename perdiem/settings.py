@@ -259,7 +259,11 @@ class ProdConfig(BaseConfig):
     DEFAULT_FILE_STORAGE = "django_s3_storage.storage.S3Storage"
     STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
     AWS_S3_BUCKET_NAME = values.Value(environ_prefix="PERDIEM", environ_required=True)
-    AWS_S3_BUCKET_NAME_STATIC = AWS_S3_BUCKET_NAME
+
+    @property
+    def AWS_S3_BUCKET_NAME_STATIC(self):
+        return self.AWS_S3_BUCKET_NAME
+
     AWS_ACCESS_KEY_ID = values.SecretValue(environ_prefix="PERDIEM")
     AWS_SECRET_ACCESS_KEY = values.SecretValue(environ_prefix="PERDIEM")
 
