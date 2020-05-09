@@ -9,15 +9,16 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 
 import os
 
-from django.core.wsgi import get_wsgi_application
-
-import cbsettings
 from dotenv import load_dotenv
 
 
 load_dotenv()
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "perdiem.settings")
-cbsettings.configure("perdiem.settings.switcher")
+os.environ.setdefault("DJANGO_CONFIGURATION", "BaseConfig")
+
+
+from configurations.wsgi import get_wsgi_application
+
 
 application = get_wsgi_application()

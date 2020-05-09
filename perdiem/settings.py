@@ -6,8 +6,10 @@
 
 import os
 
-from cbsettings import DjangoDefaults
 import requests
+import sentry_sdk
+from configurations import Configuration, values
+from sentry_sdk.integrations.django import DjangoIntegration
 
 
 def aws_s3_bucket_url(settings_class, bucket_name_settings):
@@ -17,13 +19,11 @@ def aws_s3_bucket_url(settings_class, bucket_name_settings):
     return ""
 
 
-class BaseSettings(DjangoDefaults):
+class BaseConfig(Configuration):
 
-    BASE_DIR = os.path.dirname(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    )
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    SECRET_KEY = os.environ["PERDIEM_SECRET_KEY"]
+    SECRET_KEY = values.SecretValue(environ_prefix="PERDIEM")
     DEBUG = True
     ACCEPTABLE_HOSTS = ["localhost", "127.0.0.1", ".investperdiem.com"]
 
@@ -120,16 +120,24 @@ class BaseSettings(DjangoDefaults):
             "LOCATION": "127.0.0.1:11211",
         }
     }
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": os.environ["PERDIEM_DB_NAME"],
-            "USER": os.environ["PERDIEM_DB_USER"],
-            "PASSWORD": os.environ["PERDIEM_DB_PASSWORD"],
-            "HOST": os.environ["PERDIEM_DB_HOST"],
-            "PORT": "5432",
+
+    DB_NAME = values.Value(environ_prefix="PERDIEM", environ_required=True)
+    DB_USER = values.Value(environ_prefix="PERDIEM", environ_required=True)
+    DB_PASSWORD = values.Value(environ_prefix="PERDIEM", environ_required=True)
+    DB_HOST = values.Value(environ_prefix="PERDIEM", environ_required=True)
+
+    @property
+    def DATABASES(self):
+        return {
+            "default": {
+                "ENGINE": "django.db.backends.postgresql_psycopg2",
+                "NAME": self.DB_NAME,
+                "USER": self.DB_USER,
+                "PASSWORD": self.DB_PASSWORD,
+                "HOST": self.DB_HOST,
+                "PORT": "5432",
+            }
         }
-    }
 
     # Internationalization
     TIME_ZONE = "UTC"
@@ -196,10 +204,18 @@ class BaseSettings(DjangoDefaults):
         "accounts.pipeline.send_welcome_email",
     )
     SOCIAL_AUTH_LOGIN_ERROR_URL = "/"
-    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ["PERDIEM_GOOGLE_OAUTH2_KEY"]
-    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ["PERDIEM_GOOGLE_OAUTH2_SECRET"]
-    SOCIAL_AUTH_FACEBOOK_KEY = os.environ["PERDIEM_FACEBOOK_KEY"]
-    SOCIAL_AUTH_FACEBOOK_SECRET = os.environ["PERDIEM_FACEBOOK_SECRET"]
+    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = values.SecretValue(
+        environ_name="GOOGLE_OAUTH2_KEY", environ_prefix="PERDIEM",
+    )
+    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = values.SecretValue(
+        environ_name="GOOGLE_OAUTH2_SECRET", environ_prefix="PERDIEM",
+    )
+    SOCIAL_AUTH_FACEBOOK_KEY = values.SecretValue(
+        environ_name="FACEBOOK_KEY", environ_prefix="PERDIEM",
+    )
+    SOCIAL_AUTH_FACEBOOK_SECRET = values.SecretValue(
+        environ_name="FACEBOOK_SECRET", environ_prefix="PERDIEM",
+    )
     SOCIAL_AUTH_FACEBOOK_SCOPE = ["email"]
     SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
         "fields": ", ".join(["id", "name", "email", "picture.width(150)"])
@@ -214,8 +230,12 @@ class BaseSettings(DjangoDefaults):
     DEFAULT_FROM_EMAIL = "PerDiem <noreply@investperdiem.com>"
 
     # Stripe
-    PINAX_STRIPE_PUBLIC_KEY = os.environ["PERDIEM_STRIPE_PUBLIC_KEY"]
-    PINAX_STRIPE_SECRET_KEY = os.environ["PERDIEM_STRIPE_SECRET_KEY"]
+    PINAX_STRIPE_PUBLIC_KEY = values.SecretValue(
+        environ_name="STRIPE_PUBLIC_KEY", environ_prefix="PERDIEM"
+    )
+    PINAX_STRIPE_SECRET_KEY = values.SecretValue(
+        environ_name="STRIPE_SECRET_KEY", environ_prefix="PERDIEM"
+    )
     PINAX_STRIPE_SEND_EMAIL_RECEIPTS = False
     PERDIEM_PERCENTAGE = 0.1  # 10%
     STRIPE_PERCENTAGE = 0.029  # 2.9%
@@ -223,10 +243,35 @@ class BaseSettings(DjangoDefaults):
     DEFAULT_MIN_PURCHASE = 1  # $1
 
     # MailChimp
-    MAILCHIMP_API_KEY = os.environ["PERDIEM_MAILCHIMP_API_KEY"]
-    MAILCHIMP_LIST_ID = os.environ["PERDIEM_MAILCHIMP_LIST_ID"]
+    MAILCHIMP_API_KEY = values.SecretValue(environ_prefix="PERDIEM")
+    MAILCHIMP_LIST_ID = values.SecretValue(environ_prefix="PERDIEM")
 
     # Analytics
-    GA_TRACKING_CODE = os.environ.get("PERDIEM_GA_TRACKING_CODE")
-    JACO_API_KEY = os.environ.get("PERDIEM_JACO_API_KEY")
-    ITUNES_AFFILIATE_TOKEN = os.environ.get("PERDIEM_ITUNES_AFFILIATE_TOKEN")
+    GA_TRACKING_CODE = values.Value(environ_prefix="PERDIEM")
+    JACO_API_KEY = values.Value(environ_prefix="PERDIEM")
+    ITUNES_AFFILIATE_TOKEN = values.Value(environ_prefix="PERDIEM")
+
+
+class ProdConfig(BaseConfig):
+    DEBUG = False
+
+    # Static files (CSS, JavaScript, Images)
+    DEFAULT_FILE_STORAGE = "django_s3_storage.storage.S3Storage"
+    STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+    AWS_S3_BUCKET_NAME = values.Value(environ_prefix="PERDIEM", environ_required=True)
+    AWS_S3_BUCKET_NAME_STATIC = AWS_S3_BUCKET_NAME
+    AWS_ACCESS_KEY_ID = values.SecretValue(environ_prefix="PERDIEM")
+    AWS_SECRET_ACCESS_KEY = values.SecretValue(environ_prefix="PERDIEM")
+
+    # Email
+    EMAIL_BACKEND = "django_ses.SESBackend"
+    AWS_SES_ACCESS_KEY_ID = values.SecretValue(environ_prefix="PERDIEM")
+    AWS_SES_SECRET_ACCESS_KEY = values.SecretValue(environ_prefix="PERDIEM")
+
+    SENTRY_DSN = values.SecretValue(environ_prefix="PERDIEM")
+
+    @classmethod
+    def post_setup(cls):
+        super().post_setup()
+
+        sentry_sdk.init(dsn=cls.SENTRY_DSN, integrations=[DjangoIntegration()])

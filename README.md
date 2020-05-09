@@ -18,7 +18,7 @@ Use [poetry](https://github.com/sdispater/poetry) to install Python dependencies
 
 ### Configuration
 
-PerDiem uses [python-dotenv](https://github.com/theskumar/python-dotenv) to read environment variables in from your local `.env` file. See `.env-sample` for configuration options. Be sure to [generate your own secret key](http://stackoverflow.com/a/16630719).
+PerDiem reads in environment variables from your local `.env` file. See `.env-sample` for configuration options. Be sure to [generate your own secret key](http://stackoverflow.com/a/16630719).
 
 With everything installed and all files in place, you may now create the database tables and collect static files. You can do this with:
 

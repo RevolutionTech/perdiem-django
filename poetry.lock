@@ -196,15 +196,21 @@ six = "*"
 
 [[package]]
 category = "main"
-description = "Use classes to define settings."
-name = "django-classbasedsettings"
+description = "A helper for organizing Django settings."
+name = "django-configurations"
 optional = false
 python-versions = "*"
-version = "1.5.0"
+version = "2.2"
 
 [package.dependencies]
-Django = ">=1.8"
-future = ">=0.15"
+six = "*"
+
+[package.extras]
+cache = ["django-cache-url"]
+database = ["dj-database-url"]
+email = ["dj-email-url"]
+search = ["dj-search-url"]
+testing = ["django-discover-runner", "mock", "django-cache-url (>=1.0.0)", "dj-database-url", "dj-email-url", "dj-search-url", "Sphinx (>=1.4)"]
 
 [[package]]
 category = "main"
@@ -851,7 +857,7 @@ version = "5.0.1"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "29a4e820231995c22d5797e2e08ae1819c4b49e044c9158afa33f80d6a9c6241"
+content-hash = "01ed4acc13ed870bcfdef9659868b398c00948765275fb33723af9c81efd6cae"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1009,8 +1015,9 @@ django-appconf = [
     {file = "django-appconf-1.0.3.tar.gz", hash = "sha256:35f13ca4d567f132b960e2cd4c832c2d03cb6543452d34e29b7ba10371ba80e3"},
     {file = "django_appconf-1.0.3-py2.py3-none-any.whl", hash = "sha256:c98a7af40062e996b921f5962a1c4f3f0c979fa7885f7be4710cceb90ebe13a6"},
 ]
-django-classbasedsettings = [
-    {file = "django-classbasedsettings-1.5.0.tar.gz", hash = "sha256:c85708a85614c671e81d75e8781691c0e69a173ea6d25e54b366d6004dd8c5ee"},
+django-configurations = [
+    {file = "django-configurations-2.2.tar.gz", hash = "sha256:9e3bcea1355ac50a4c9f854f751d214cb17e5f8adf18405a4488d0a1e8945915"},
+    {file = "django_configurations-2.2-py2.py3-none-any.whl", hash = "sha256:0b93cb7042739e2d69cfc6fb81676bbd3cbb63ea19b02e8b681f4cad3a8aaf1b"},
 ]
 django-gfklookupwidget = [
     {file = "django-gfklookupwidget-1.0.8.tar.gz", hash = "sha256:1fa7c5e9c56445a79171f669eba2b7581a311cddfb80245e92d725d806e8f90f"},
