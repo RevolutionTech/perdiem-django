@@ -27,7 +27,7 @@ With everything installed and all files in place, you may now create the databas
 
 ### Deployment
 
-Before deploying, you will need to add some additional environment variables to your `.env` file. See `prod.py` for the environment variables used in production.
+Before deploying, you will need to add some additional environment variables to your `.env` file. See `ProdConfig` for the environment variables used in production.
 
 ###### Note: The remainder of this section assumes that PerDiem is deployed in a Debian Linux environment.
 
