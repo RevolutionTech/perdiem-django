@@ -6,7 +6,6 @@
 
 from django.db import models
 from django.dispatch import receiver
-
 from pinax.stripe.models import Charge
 from pinax.stripe.webhooks import registry
 

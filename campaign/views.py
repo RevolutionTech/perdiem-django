@@ -5,7 +5,7 @@
 """
 
 from django.core.cache import cache
-from django.db.models import OuterRef, Exists
+from django.db.models import Exists, OuterRef
 from django.views.generic import TemplateView
 
 from accounts.models import UserProfile

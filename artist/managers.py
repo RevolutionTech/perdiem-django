@@ -4,10 +4,9 @@
 
 """
 
+import geopy
 from django.db import models
 from django.utils import timezone
-
-import geopy
 from geopy.distance import distance as calc_distance
 
 

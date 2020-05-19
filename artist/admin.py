@@ -8,10 +8,9 @@ from django import forms
 from django.contrib import admin
 from django.contrib.admin.widgets import AdminTextInputWidget
 from django.template.loader import render_to_string
-
 from pagedown.widgets import AdminPagedownWidget
 
-from artist.models import Genre, Artist, ArtistAdmin, Bio, Photo, Playlist, Social
+from artist.models import Artist, ArtistAdmin, Bio, Genre, Photo, Playlist, Social
 
 
 class LocationWidget(AdminTextInputWidget):

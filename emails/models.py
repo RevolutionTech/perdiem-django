@@ -7,10 +7,10 @@
 import uuid
 
 from django.contrib.auth.models import User
-from django.urls import reverse
 from django.db import models
+from django.urls import reverse
 
-from emails.managers import VerifiedEmailManager, EmailSubscriptionManager
+from emails.managers import EmailSubscriptionManager, VerifiedEmailManager
 
 
 class VerifiedEmail(models.Model):

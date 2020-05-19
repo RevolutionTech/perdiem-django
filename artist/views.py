@@ -6,17 +6,16 @@
 
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.urls import reverse
 from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
-
 from geopy.exc import GeocoderTimedOut
 
 from artist.forms import ArtistApplyForm, ArtistUpdateForm
 from artist.geolocator import geolocator
-from artist.models import Genre, Artist, Update, UpdateImage, UpdateMediaURL
+from artist.models import Artist, Genre, Update, UpdateImage, UpdateMediaURL
 from emails.messages import ArtistApplyEmail, ArtistUpdateEmail
 
 

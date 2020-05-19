@@ -13,10 +13,9 @@ from django.db import transaction
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from accounts.models import UserAvatar, UserAvatarURL, UserAvatarImage
+from accounts.models import UserAvatar, UserAvatarImage, UserAvatarURL
 from emails.messages import WelcomeEmail
 from emails.models import VerifiedEmail
-
 
 # https://stackoverflow.com/a/43843633/3241924
 GOOGLE_OAUTH2_DEFAULT_AVATAR_URL = (

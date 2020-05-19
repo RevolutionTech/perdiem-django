@@ -6,10 +6,9 @@
 
 from django import forms
 from django.core.exceptions import ObjectDoesNotExist
-
 from pagedown.widgets import AdminPagedownWidget
 
-from music.models import AlbumBio, Track, ActivityEstimate
+from music.models import ActivityEstimate, AlbumBio, Track
 
 
 class AlbumBioAdminForm(forms.ModelForm):

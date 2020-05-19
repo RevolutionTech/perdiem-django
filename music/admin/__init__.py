@@ -6,9 +6,8 @@
 
 from django.contrib import admin
 
-from music.admin.model_admins import AlbumAdmin, ActivityEstimateAdmin
-from music.models import Album, Track, ActivityEstimate
-
+from music.admin.model_admins import ActivityEstimateAdmin, AlbumAdmin
+from music.models import ActivityEstimate, Album, Track
 
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Track)

@@ -7,9 +7,9 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.forms import formset_factory
 from django.http import (
-    HttpResponseRedirect,
     HttpResponseBadRequest,
     HttpResponseNotAllowed,
+    HttpResponseRedirect,
 )
 from django.views.generic import TemplateView
 

@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.urls import reverse
 
 from music.admin.forms import DailyReportForm
-from music.models import Track, ActivityEstimate
+from music.models import ActivityEstimate, Track
 from perdiem.views import FormsetView
 
 

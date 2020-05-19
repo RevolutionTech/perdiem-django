@@ -12,17 +12,16 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 
 from accounts.views import (
-    VerifyEmailView,
     ContactFormView,
     ProfileView,
     PublicProfileView,
+    VerifyEmailView,
     redirect_to_profile,
 )
-from artist.views import ArtistListView, ArtistDetailView, ArtistApplyFormView
+from artist.views import ArtistApplyFormView, ArtistDetailView, ArtistListView
 from campaign.views import LeaderboardView
 from emails.views import UnsubscribeView, unsubscribe_from_mailchimp
-from music.views import MusicListView, AlbumDetailView
-
+from music.views import AlbumDetailView, MusicListView
 
 urlpatterns = [
     url(r"^health-check/?$", lambda r: HttpResponse(""), name="health_check"),

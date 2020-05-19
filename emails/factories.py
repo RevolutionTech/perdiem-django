@@ -1,6 +1,5 @@
-from django.apps import apps
-
 import factory
+from django.apps import apps
 
 from accounts.factories import UserFactory
 

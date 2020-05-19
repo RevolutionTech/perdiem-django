@@ -6,8 +6,7 @@
 
 from django.conf.urls import url
 
-from api.views import CoordinatesFromAddress, PaymentCharge, DeleteUpdate
-
+from api.views import CoordinatesFromAddress, DeleteUpdate, PaymentCharge
 
 urlpatterns = [
     url(r"^coordinates/?$", CoordinatesFromAddress.as_view()),

@@ -8,9 +8,9 @@ from django.apps import apps
 from django.db import connection
 from django.db.migrations.executor import MigrationExecutor
 from django.test import TestCase, override_settings
+from pigeon.test import RenderTestCase
 
 from accounts.factories import UserFactory
-from pigeon.test import RenderTestCase
 
 
 @override_settings(PASSWORD_HASHERS=("django.contrib.auth.hashers.MD5PasswordHasher",))

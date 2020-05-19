@@ -11,14 +11,13 @@ import os
 
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "perdiem.settings")
 os.environ.setdefault("DJANGO_CONFIGURATION", "BaseConfig")
 
 
-from configurations.wsgi import get_wsgi_application
+from configurations.wsgi import get_wsgi_application  # isort:skip
 
 
 application = get_wsgi_application()

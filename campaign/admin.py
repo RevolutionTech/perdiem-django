@@ -6,7 +6,6 @@
 
 from django import forms
 from django.contrib import admin
-
 from pinax.stripe.models import (
     Account,
     BankAccount,
@@ -29,7 +28,6 @@ from campaign.models import (
     Project,
     RevenueReport,
 )
-
 
 # Unregister Pinax Stripe models from admin
 for pinax_stripe_model in [

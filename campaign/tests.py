@@ -6,9 +6,8 @@
 
 import datetime
 
-from django.test import TestCase
-
 import factory
+from django.test import TestCase
 from pigeon.test import RenderTestCase
 
 from artist.factories import ArtistFactory

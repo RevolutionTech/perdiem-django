@@ -1,7 +1,6 @@
+import factory
 from django.apps import apps as django_apps
 from django.utils.text import slugify
-
-import factory
 
 from accounts.factories import UserFactory
 
