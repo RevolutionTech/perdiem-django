@@ -1,7 +1,6 @@
+import factory
 from django.apps import apps as django_apps
 from django.conf import settings
-
-import factory
 
 
 def userfactory_factory(apps, has_password=True):

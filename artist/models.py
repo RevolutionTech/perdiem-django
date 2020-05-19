@@ -5,11 +5,10 @@
 """
 
 from django.contrib.auth.models import User
-from django.urls import reverse
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import escape
-
 from markdown_deux.templatetags.markdown_deux_tags import markdown_allowed
 
 from artist.managers import ArtistQuerySet

@@ -8,23 +8,23 @@ from django.contrib.auth import authenticate, login, update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from django.urls import reverse
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView, FormView
 
 from accounts.forms import (
-    RegisterAccountForm,
-    EditNameForm,
-    EditAvatarForm,
-    EmailPreferencesForm,
     ContactForm,
+    EditAvatarForm,
+    EditNameForm,
+    EmailPreferencesForm,
+    RegisterAccountForm,
 )
 from accounts.models import UserAvatar, UserAvatarImage
 from artist.models import Artist, Update
-from emails.messages import EmailVerificationEmail, WelcomeEmail, ContactEmail
-from emails.models import VerifiedEmail, EmailSubscription
+from emails.messages import ContactEmail, EmailVerificationEmail, WelcomeEmail
+from emails.models import EmailSubscription, VerifiedEmail
 from music.models import Album
 from perdiem.views import ConstituentFormView, MultipleFormView
 

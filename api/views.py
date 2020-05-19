@@ -6,13 +6,13 @@
 
 import decimal
 
+import stripe
 from geopy.exc import GeocoderTimedOut
 from pinax.stripe.actions import charges, customers, sources
 from pinax.stripe.models import Card
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-import stripe
 
 from api.forms import CoordinatesFromAddressForm
 from artist.geolocator import geolocator

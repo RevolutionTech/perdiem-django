@@ -1,6 +1,5 @@
-from django.apps import apps as django_apps
-
 import factory
+from django.apps import apps as django_apps
 
 from accounts.factories import UserFactory
 from artist.factories import artistfactory_factory

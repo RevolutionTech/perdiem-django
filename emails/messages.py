@@ -6,11 +6,10 @@
 
 from django.conf import settings
 from django.contrib.sites.models import Site
-
 from templated_email import send_templated_mail
 
 from emails.exceptions import NoTemplateProvided
-from emails.models import VerifiedEmail, EmailSubscription
+from emails.models import EmailSubscription, VerifiedEmail
 from emails.utils import create_unsubscribe_link
 
 

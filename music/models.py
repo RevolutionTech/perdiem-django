@@ -4,6 +4,7 @@
 
 """
 
+import boto3
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
@@ -11,13 +12,11 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
-
-import boto3
 from gfklookupwidget.fields import GfkLookupField
 from markdown_deux.templatetags.markdown_deux_tags import markdown_allowed
+from pigeon.url.utils import add_params_to_url
 
 from campaign.models import Project
-from pigeon.url.utils import add_params_to_url
 
 
 class Album(models.Model):

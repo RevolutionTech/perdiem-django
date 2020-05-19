@@ -1,7 +1,6 @@
+import factory
 from django.apps import apps
 from django.utils.text import slugify
-
-import factory
 
 from campaign.factories import ProjectFactory
 from music.models import ActivityEstimate as ActivityEstimateConst

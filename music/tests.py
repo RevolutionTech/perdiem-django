@@ -10,7 +10,7 @@ from django.utils import timezone
 
 from campaign.models import Campaign
 from music.factories import ActivityEstimateFactory, AlbumFactory, TrackFactory
-from music.models import Album, ActivityEstimate
+from music.models import ActivityEstimate, Album
 from perdiem.tests import PerDiemTestCase
 
 

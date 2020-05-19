@@ -16,7 +16,6 @@ from django.views.generic import TemplateView
 
 from accounts.views import RegisterAccountView, SettingsView
 
-
 urlpatterns = [
     url(r"^logout/?$", LogoutView.as_view(next_page="/"), name="logout"),
     url(r"^register/?$", RegisterAccountView.as_view(), name="register"),

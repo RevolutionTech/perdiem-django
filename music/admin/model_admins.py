@@ -7,9 +7,9 @@
 from django.conf.urls import url
 from django.contrib import admin
 
-from music.admin.forms import AlbumBioAdminForm, ActivityEstimateAdminForm
+from music.admin.forms import ActivityEstimateAdminForm, AlbumBioAdminForm
 from music.admin.views import DailyReportAdminView
-from music.models import Track, Artwork, AlbumBio, MarketplaceURL, Audio
+from music.models import AlbumBio, Artwork, Audio, MarketplaceURL, Track
 
 
 class TrackInline(admin.StackedInline):

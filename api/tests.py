@@ -8,10 +8,10 @@ from unittest import mock
 
 from geopy.exc import GeocoderTimedOut
 
-from perdiem.tests import PerDiemTestCase
 from accounts.factories import UserFactory
 from artist.factories import ArtistAdminFactory, UpdateFactory
 from campaign.factories import CampaignFactory
+from perdiem.tests import PerDiemTestCase
 
 
 class CoordinatesFromAddressTestCase(PerDiemTestCase):

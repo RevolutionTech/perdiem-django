@@ -4,13 +4,14 @@
 
 """
 import io
-from PIL import Image, ImageOps
+
 from django import forms
 from django.conf import settings
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 from django.core import validators
 from django.core.files.base import ContentFile
+from PIL import Image, ImageOps
 
 from accounts.models import UserAvatar
 

@@ -7,11 +7,10 @@ import datetime
 import inspect
 from unittest import mock
 
+import factory
 from django.core.management import call_command
 from django.test import TestCase
 from django.utils import timezone
-
-import factory
 from geopy.exc import GeocoderTimedOut
 
 from artist.factories import (
@@ -21,7 +20,8 @@ from artist.factories import (
     artistfactory_factory,
     updatefactory_factory,
 )
-from artist.models import Artist, Playlist as PlaylistConst
+from artist.models import Artist
+from artist.models import Playlist as PlaylistConst
 from campaign.factories import CampaignFactory, InvestmentFactory
 from perdiem.tests import MigrationTestCase, PerDiemTestCase
 
