@@ -279,7 +279,7 @@ description = "Django Amazon S3 file storage."
 name = "django-s3-storage"
 optional = false
 python-versions = "*"
-version = "0.13.0"
+version = "0.13.2"
 
 [package.dependencies]
 boto3 = ">=1.4.4,<2"
@@ -871,7 +871,7 @@ version = "5.0.1"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "3eaf7ef6b35dbba6a117a6fbe9671093658ad56da85a06ad5637d77d3647af87"
+content-hash = "b9deaaa3734a837c4850bc35e3ab7540d7a8e54aa7aa2aba2ef6434227d937f9"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1044,6 +1044,7 @@ django-markdown-deux = [
 ]
 django-pagedown = [
     {file = "django-pagedown-2.0.3.tar.gz", hash = "sha256:2558c14167baf05bb5205dccd880d1efc62b3a16530d98b165dc85fc26692eb1"},
+    {file = "django_pagedown-2.0.3-py2-none-any.whl", hash = "sha256:92f45ed52da00526cbdbf8c7cbd33d721f25f7d5757c4be5754d6c41695f7992"},
     {file = "django_pagedown-2.0.3-py3-none-any.whl", hash = "sha256:83b30134131a49358196f8c2f0e2e25d730ee7a820482a7fda5ef386c22b1d6c"},
 ]
 django-pigeon = [
@@ -1053,7 +1054,7 @@ django-render-block = [
     {file = "django_render_block-0.5-py2.py3-none-any.whl", hash = "sha256:0eab0c4ef1b99ad307e1bd1bdd0daa6ee4252bc39363b1b30b29cf675b840968"},
 ]
 django-s3-storage = [
-    {file = "django-s3-storage-0.13.0.tar.gz", hash = "sha256:53c0d5a6b5064073246c120c67dbe011c16f27f77bd195573bccfd4c38756f83"},
+    {file = "django-s3-storage-0.13.2.tar.gz", hash = "sha256:f938740590ab5e5189653228e52094ddacaaf0f0faf0d719ca7a0b2391906161"},
 ]
 django-ses = [
     {file = "django-ses-0.8.14.tar.gz", hash = "sha256:ad45fca653db1725d2237d5aa1a4e2705789088717d69b9a91e4a1c7688896b5"},
