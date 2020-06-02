@@ -653,7 +653,7 @@ description = "A tool to automatically upgrade syntax for newer versions."
 name = "pyupgrade"
 optional = false
 python-versions = ">=3.6.1"
-version = "2.3.0"
+version = "2.4.4"
 
 [package.dependencies]
 tokenize-rt = ">=3.2.0"
@@ -873,7 +873,7 @@ version = "5.1.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "bf8a99f40dbfec4dbacf1aa1af0fc0a6784fdf2baf34da14a777c1cb61a072f0"
+content-hash = "b699a9f5e448180f792bdc739d92da5213e768dd5d0251c432eb25a00fa4118c"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1230,8 +1230,8 @@ pytz = [
     {file = "pytz-2019.1.tar.gz", hash = "sha256:d747dd3d23d77ef44c6a3526e274af6efeb0a6f1afd5a69ba4d5be4098c8e141"},
 ]
 pyupgrade = [
-    {file = "pyupgrade-2.3.0-py2.py3-none-any.whl", hash = "sha256:e72fd21301d2558985612e451a64d6b65ef201a4117ff6fa3d5afb902caf0127"},
-    {file = "pyupgrade-2.3.0.tar.gz", hash = "sha256:101f67753cf96e23662a13c536eeea4d92646d970dd88777b77eb2d24793df06"},
+    {file = "pyupgrade-2.4.4-py2.py3-none-any.whl", hash = "sha256:c82f8b6371d68c864a95988621a229bdc7ac707fa3d4646496acbc2c99b45c9f"},
+    {file = "pyupgrade-2.4.4.tar.gz", hash = "sha256:ebe9db6e2be3f1c268344f492b390e2bcb6328d4a477d9077184dd303b51fe32"},
 ]
 regex = [
     {file = "regex-2019.11.1-cp27-none-win32.whl", hash = "sha256:604dc563a02a74d70ae1f55208ddc9bfb6d9f470f6d1a5054c4bd5ae58744ab1"},
