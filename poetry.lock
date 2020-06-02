@@ -245,10 +245,11 @@ description = "A Django app that allows the easy addition of Stack Overflow's 'P
 name = "django-pagedown"
 optional = false
 python-versions = "*"
-version = "2.0.3"
+version = "2.1.2"
 
 [package.dependencies]
 Django = ">=2.1"
+Pillow = "*"
 
 [[package]]
 category = "main"
@@ -872,7 +873,7 @@ version = "5.1.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "c359081c363cf6827780b5bc387780232acd1139be158bd5557baca9e14ddfa9"
+content-hash = "bf8a99f40dbfec4dbacf1aa1af0fc0a6784fdf2baf34da14a777c1cb61a072f0"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1044,9 +1045,8 @@ django-markdown-deux = [
     {file = "django-markdown-deux-1.0.5.zip", hash = "sha256:5b4a3cd9454af5b4cec0e19151b41d98d09400ddae0688afb81dbf62a4edafff"},
 ]
 django-pagedown = [
-    {file = "django-pagedown-2.0.3.tar.gz", hash = "sha256:2558c14167baf05bb5205dccd880d1efc62b3a16530d98b165dc85fc26692eb1"},
-    {file = "django_pagedown-2.0.3-py2-none-any.whl", hash = "sha256:92f45ed52da00526cbdbf8c7cbd33d721f25f7d5757c4be5754d6c41695f7992"},
-    {file = "django_pagedown-2.0.3-py3-none-any.whl", hash = "sha256:83b30134131a49358196f8c2f0e2e25d730ee7a820482a7fda5ef386c22b1d6c"},
+    {file = "django_pagedown-2.1.2-py2-none-any.whl", hash = "sha256:9cb56d14e0bfc3057cd2842c32f93a48c3b844ec2a7aa12f0e424a8750ac0d8c"},
+    {file = "django_pagedown-2.1.2-py3-none-any.whl", hash = "sha256:7f97a47aad0d5fbb654db89db0cc144f424b8c53a246a6680d8c8ee2c27ee543"},
 ]
 django-pigeon = [
     {file = "django-pigeon-0.3.0.tar.gz", hash = "sha256:ae7433109d944a2236223b4f61baf8e19043fea35c0a949e1edd1fb79cc94b18"},
