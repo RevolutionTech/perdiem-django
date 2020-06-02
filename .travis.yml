@@ -17,7 +17,7 @@ before_script:
   - cp .env-sample .env
 
 script:
-  - poetry run pyupgrade --py37-plus $(find . -name '*.py')
+  - poetry run pyupgrade --py38-plus $(find . -name '*.py')
   - poetry run isort --check-only
   - poetry run black . --check
   - poetry run python manage.py makemigrations --check  # validate no outstanding model changes
