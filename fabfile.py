@@ -25,7 +25,10 @@ def _pull_latest_changes(cxn):
             "git rev-parse HEAD", hide="stdout"
         ).stdout.strip()
         cxn.run("git pull", echo=True)
-        cmd_changes_pulled = f'git log {previous_commit_hash}.. --reverse --format="%h : %an : %s" --no-color'
+        cmd_changes_pulled = (
+            f"git log {previous_commit_hash}.. "
+            f'--reverse --first-parent --format="%h : %an : %s" --no-color'
+        )
         changes_pulled = cxn.run(cmd_changes_pulled, hide="stdout").stdout.strip()
     return changes_pulled
 
