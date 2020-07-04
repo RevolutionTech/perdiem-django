@@ -56,14 +56,6 @@ d = ["aiohttp (>=3.3.2)", "aiohttp-cors"]
 
 [[package]]
 category = "main"
-description = "Amazon Web Services Library"
-name = "boto"
-optional = false
-python-versions = "*"
-version = "2.49.0"
-
-[[package]]
-category = "main"
 description = "The AWS SDK for Python"
 name = "boto3"
 optional = false
@@ -291,11 +283,12 @@ category = "main"
 description = "A Django email backend for Amazon's Simple Email Service"
 name = "django-ses"
 optional = false
-python-versions = "*"
-version = "0.8.14"
+python-versions = ">=2.7.15"
+version = "1.0.1"
 
 [package.dependencies]
-boto = ">=2.31.0"
+boto3 = ">=1.0.0"
+django = ">1.10"
 future = ">=0.16.0"
 pytz = ">=2016.10"
 
@@ -873,7 +866,7 @@ version = "5.1.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "96abed42dc2dbe1968c0260b6824332c2f5a4dd8f9559185f2609483da68f078"
+content-hash = "0c202b45b8d6252de5aa84236af947266626a5fd08e065714dd1562a7e6a1833"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -908,10 +901,6 @@ bcrypt = [
 black = [
     {file = "black-19.10b0-py36-none-any.whl", hash = "sha256:1b30e59be925fafc1ee4565e5e08abef6b03fe455102883820fe5ee2e4734e0b"},
     {file = "black-19.10b0.tar.gz", hash = "sha256:c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539"},
-]
-boto = [
-    {file = "boto-2.49.0-py2.py3-none-any.whl", hash = "sha256:147758d41ae7240dc989f0039f27da8ca0d53734be0eb869ef16e3adcfa462e8"},
-    {file = "boto-2.49.0.tar.gz", hash = "sha256:ea0d3b40a2d852767be77ca343b58a9e3a4b00d9db440efb8da74b4e58025e5a"},
 ]
 boto3 = [
     {file = "boto3-1.14.14-py2.py3-none-any.whl", hash = "sha256:4c2f5f9f28930e236845e2cddbe01cb093ca96dc1f5c6e2b2b254722018a2268"},
@@ -1058,8 +1047,8 @@ django-s3-storage = [
     {file = "django-s3-storage-0.13.2.tar.gz", hash = "sha256:f938740590ab5e5189653228e52094ddacaaf0f0faf0d719ca7a0b2391906161"},
 ]
 django-ses = [
-    {file = "django-ses-0.8.14.tar.gz", hash = "sha256:ad45fca653db1725d2237d5aa1a4e2705789088717d69b9a91e4a1c7688896b5"},
-    {file = "django_ses-0.8.14-py2.py3-none-any.whl", hash = "sha256:0077b9a70a0e1a8c4eb13c55451663fbca3b0bb14f462ed73eeb56aa330ab1ce"},
+    {file = "django-ses-1.0.1.tar.gz", hash = "sha256:d9d7dff59106575729ba595b0c87c6f82bfb5cbba16ef638aa4900be6fce48a3"},
+    {file = "django_ses-1.0.1-py2.py3-none-any.whl", hash = "sha256:5f6c942973a25d315e0379332c75594acb9ed70e5206d0cba212f9e3493e32bc"},
 ]
 django-templated-email = [
     {file = "django-templated-email-2.3.0.tar.gz", hash = "sha256:536c4e5ae099eabfb9aab36087d4d7799948c654e73da55a744213d086d5bb33"},
