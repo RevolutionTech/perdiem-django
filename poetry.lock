@@ -707,11 +707,11 @@ botocore = ">=1.12.36,<2.0.0"
 
 [[package]]
 category = "main"
-description = "Python client for Sentry (https://getsentry.com)"
+description = "Python client for Sentry (https://sentry.io)"
 name = "sentry-sdk"
 optional = false
 python-versions = "*"
-version = "0.16.0"
+version = "0.16.3"
 
 [package.dependencies]
 certifi = "*"
@@ -725,6 +725,7 @@ celery = ["celery (>=3)"]
 django = ["django (>=1.8)"]
 falcon = ["falcon (>=1.4)"]
 flask = ["flask (>=0.11)", "blinker (>=1.1)"]
+pure_eval = ["pure-eval", "executing", "asttokens"]
 pyspark = ["pyspark (>=2.4.4)"]
 rq = ["rq (>=0.6)"]
 sanic = ["sanic (>=0.8)"]
@@ -868,7 +869,7 @@ version = "5.1.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "cc02602cca1a4c3249293eddba3ec7f544075777db46bd0dbdbda7da0254e369"
+content-hash = "174d9693970bde2ffef2880bce3564b299b83ee09cc91f726eedba82d9e89478"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1259,8 +1260,8 @@ s3transfer = [
     {file = "s3transfer-0.3.2.tar.gz", hash = "sha256:4924e10451cc37901945806423d16c2c2040a6530645a614ed87e995ccec764c"},
 ]
 sentry-sdk = [
-    {file = "sentry-sdk-0.16.0.tar.gz", hash = "sha256:da06bc3641e81ec2c942f87a0676cd9180044fa3d1697524a0005345997542e2"},
-    {file = "sentry_sdk-0.16.0-py2.py3-none-any.whl", hash = "sha256:e80d61af85d99a1222c1a3e2a24023618374cd50a99673aa7fa3cf920e7d813b"},
+    {file = "sentry-sdk-0.16.3.tar.gz", hash = "sha256:21b17d6aa064c0fb703a7c00f77cf6c9c497cf2f83345c28892980a5e742d116"},
+    {file = "sentry_sdk-0.16.3-py2.py3-none-any.whl", hash = "sha256:4fc97114c77d005467b9b1a29f042e2bc01923cb683b0ef0bbda46e79fa12532"},
 ]
 six = [
     {file = "six-1.12.0-py2.py3-none-any.whl", hash = "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c"},
