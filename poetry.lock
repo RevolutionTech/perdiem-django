@@ -7,17 +7,6 @@ python-versions = "*"
 version = "1.4.3"
 
 [[package]]
-category = "main"
-description = "ASGI specs, helper code, and adapters"
-name = "asgiref"
-optional = false
-python-versions = ">=3.5"
-version = "3.2.10"
-
-[package.extras]
-tests = ["pytest", "pytest-asyncio"]
-
-[[package]]
 category = "dev"
 description = "Classes Without Boilerplate"
 name = "attrs"
@@ -174,11 +163,10 @@ category = "main"
 description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 name = "django"
 optional = false
-python-versions = ">=3.6"
-version = "3.0.8"
+python-versions = ">=3.5"
+version = "2.2.14"
 
 [package.dependencies]
-asgiref = ">=3.2,<4.0"
 pytz = "*"
 sqlparse = ">=0.2.2"
 
@@ -881,17 +869,13 @@ version = "5.1.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "889106afe6879e05f3e6d21b67cbdaf2eef3fbb6f450ae77a7b871e92ce28514"
+content-hash = "174d9693970bde2ffef2880bce3564b299b83ee09cc91f726eedba82d9e89478"
 python-versions = "^3.8"
 
 [metadata.files]
 appdirs = [
     {file = "appdirs-1.4.3-py2.py3-none-any.whl", hash = "sha256:d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e"},
     {file = "appdirs-1.4.3.tar.gz", hash = "sha256:9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92"},
-]
-asgiref = [
-    {file = "asgiref-3.2.10-py3-none-any.whl", hash = "sha256:9fc6fb5d39b8af147ba40765234fa822b39818b12cc80b35ad9b0cef3a476aed"},
-    {file = "asgiref-3.2.10.tar.gz", hash = "sha256:7e51911ee147dd685c3c8b805c0ad0cb58d360987b56953878f8c06d2d1c6f1a"},
 ]
 attrs = [
     {file = "attrs-19.1.0-py2.py3-none-any.whl", hash = "sha256:69c0dbf2ed392de1cb5ec704444b08a5ef81680a61cb899dc08127123af36a79"},
@@ -1035,8 +1019,8 @@ defusedxml = [
     {file = "defusedxml-0.6.0.tar.gz", hash = "sha256:f684034d135af4c6cbb949b8a4d2ed61634515257a67299e5f940fbaa34377f5"},
 ]
 django = [
-    {file = "Django-3.0.8-py3-none-any.whl", hash = "sha256:5457fc953ec560c5521b41fad9e6734a4668b7ba205832191bbdff40ec61073c"},
-    {file = "Django-3.0.8.tar.gz", hash = "sha256:31a5fbbea5fc71c99e288ec0b2f00302a0a92c44b13ede80b73a6a4d6d205582"},
+    {file = "Django-2.2.14-py3-none-any.whl", hash = "sha256:f2250bd35d0f6c23e930c544629934144e5dd39a4c06092e1050c731c1712ba8"},
+    {file = "Django-2.2.14.tar.gz", hash = "sha256:edf0ecf6657713b0435b6757e6069466925cae70d634a3283c96b80c01e06191"},
 ]
 django-appconf = [
     {file = "django-appconf-1.0.3.tar.gz", hash = "sha256:35f13ca4d567f132b960e2cd4c832c2d03cb6543452d34e29b7ba10371ba80e3"},
