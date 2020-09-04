@@ -28,7 +28,7 @@ django-markdown-deux = "^1.0.5"
 django-pagedown = "^2.1.2"
 django-gfklookupwidget = "^1.0.8"
 python-dotenv = "^0.14.0"
-sentry-sdk = "^0.16.3"
+sentry-sdk = "^0.17.3"
 fabric = "^2.5"
 django-configurations = "^2.2"
 
