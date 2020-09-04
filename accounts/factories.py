@@ -4,7 +4,7 @@ from django.conf import settings
 
 
 def userfactory_factory(apps, has_password=True):
-    class UserFactory(factory.DjangoModelFactory):
+    class UserFactory(factory.django.DjangoModelFactory):
 
         _PASSWORD = "abc123"
 
@@ -23,7 +23,7 @@ def userfactory_factory(apps, has_password=True):
 UserFactory = userfactory_factory(apps=django_apps)
 
 
-class UserAvatarFactory(factory.DjangoModelFactory):
+class UserAvatarFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = django_apps.get_model("accounts", "UserAvatar")
 

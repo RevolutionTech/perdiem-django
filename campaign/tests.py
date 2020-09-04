@@ -58,7 +58,7 @@ class PointArtistPercentageBreakdownsAndRevenueReportsToProjectsMigrationTestCas
         )
 
         class ArtistPercentageBreakdownFactoryForMigrationTestCase(
-            factory.DjangoModelFactory
+            factory.django.DjangoModelFactory
         ):
             class Meta:
                 model = apps.get_model("campaign", "ArtistPercentageBreakdown")

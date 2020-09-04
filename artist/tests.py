@@ -48,7 +48,9 @@ class SoundCloudPlaylistToPlaylistMigrationTestCase(MigrationTestCase):
     migrate_to = "0010_auto_20170201_0754"
 
     def setUpBeforeMigration(self, apps):
-        class SoundCloudPlaylistFactoryForMigrationTestCase(factory.DjangoModelFactory):
+        class SoundCloudPlaylistFactoryForMigrationTestCase(
+            factory.django.DjangoModelFactory
+        ):
             class Meta:
                 model = apps.get_model("artist", "SoundCloudPlaylist")
 
