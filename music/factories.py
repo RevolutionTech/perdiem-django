@@ -6,7 +6,7 @@ from campaign.factories import ProjectFactory
 from music.models import ActivityEstimate as ActivityEstimateConst
 
 
-class AlbumFactory(factory.DjangoModelFactory):
+class AlbumFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = apps.get_model("music", "Album")
 
@@ -15,7 +15,7 @@ class AlbumFactory(factory.DjangoModelFactory):
     slug = factory.LazyAttribute(lambda album: slugify(album.name))
 
 
-class TrackFactory(factory.DjangoModelFactory):
+class TrackFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = apps.get_model("music", "Track")
 
@@ -25,7 +25,7 @@ class TrackFactory(factory.DjangoModelFactory):
     )
 
 
-class ActivityEstimateFactory(factory.DjangoModelFactory):
+class ActivityEstimateFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = apps.get_model("music", "ActivityEstimate")
 

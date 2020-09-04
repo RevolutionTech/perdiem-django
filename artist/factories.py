@@ -6,7 +6,7 @@ from accounts.factories import UserFactory
 
 
 def artistfactory_factory(apps):
-    class ArtistFactory(factory.DjangoModelFactory):
+    class ArtistFactory(factory.django.DjangoModelFactory):
         class Meta:
             model = apps.get_model("artist", "Artist")
 
@@ -21,7 +21,7 @@ def artistfactory_factory(apps):
 
 
 def updatefactory_factory(apps):
-    class UpdateFactory(factory.DjangoModelFactory):
+    class UpdateFactory(factory.django.DjangoModelFactory):
         class Meta:
             model = apps.get_model("artist", "Update")
 
@@ -34,12 +34,12 @@ ArtistFactory = artistfactory_factory(apps=django_apps)
 UpdateFactory = updatefactory_factory(apps=django_apps)
 
 
-class GenreFactory(factory.DjangoModelFactory):
+class GenreFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = django_apps.get_model("artist", "Genre")
 
 
-class ArtistAdminFactory(factory.DjangoModelFactory):
+class ArtistAdminFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = django_apps.get_model("artist", "ArtistAdmin")
 

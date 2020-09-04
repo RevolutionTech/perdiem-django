@@ -6,7 +6,7 @@ from artist.factories import artistfactory_factory
 
 
 def projectfactory_factory(apps):
-    class ProjectFactory(factory.DjangoModelFactory):
+    class ProjectFactory(factory.django.DjangoModelFactory):
         class Meta:
             model = apps.get_model("campaign", "Project")
 
@@ -16,7 +16,7 @@ def projectfactory_factory(apps):
 
 
 def campaignfactory_factory(apps, point_to_project=True):
-    class CampaignFactory(factory.DjangoModelFactory):
+    class CampaignFactory(factory.django.DjangoModelFactory):
         class Meta:
             model = apps.get_model("campaign", "Campaign")
 
@@ -34,7 +34,7 @@ def campaignfactory_factory(apps, point_to_project=True):
 
 
 def revenuereportfactory_factory(apps, point_to_project=True):
-    class RevenueReportFactory(factory.DjangoModelFactory):
+    class RevenueReportFactory(factory.django.DjangoModelFactory):
         class Meta:
             model = apps.get_model("campaign", "RevenueReport")
 
@@ -53,14 +53,14 @@ CampaignFactory = campaignfactory_factory(apps=django_apps)
 RevenueReportFactory = revenuereportfactory_factory(apps=django_apps)
 
 
-class CustomerFactory(factory.DjangoModelFactory):
+class CustomerFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = django_apps.get_model("pinax_stripe", "Customer")
 
     user = factory.SubFactory(UserFactory)
 
 
-class ChargeFactory(factory.DjangoModelFactory):
+class ChargeFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = django_apps.get_model("pinax_stripe", "Charge")
 
@@ -69,7 +69,7 @@ class ChargeFactory(factory.DjangoModelFactory):
     refunded = False
 
 
-class InvestmentFactory(factory.DjangoModelFactory):
+class InvestmentFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = django_apps.get_model("campaign", "Investment")
 
