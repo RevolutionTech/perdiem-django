@@ -35,7 +35,7 @@ django-configurations = "^2.2"
 [tool.poetry.dev-dependencies]
 factory-boy = "^3.0.1"
 coverage = "^5.2"
-black = "^19.10b0"
+black = "^20.8b1"
 pyupgrade = "^2.7"
 isort = "^5.5.0"
 
