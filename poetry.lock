@@ -272,7 +272,7 @@ description = "A Django email backend for Amazon's Simple Email Service"
 name = "django-ses"
 optional = false
 python-versions = ">=2.7"
-version = "1.0.2"
+version = "1.0.3"
 
 [package.dependencies]
 boto3 = ">=1.0.0"
@@ -869,7 +869,7 @@ version = "5.2.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "d2bee2fce0e738855161e1f9134ae97ebc56093dc27b11c41d412446948ad2ca"
+content-hash = "85cbe3a11afcd12fc587c39cd3637f189667d1559dc7ed963a744561c5774ba1"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -1050,8 +1050,8 @@ django-s3-storage = [
     {file = "django-s3-storage-0.13.4.tar.gz", hash = "sha256:4caa2e993ca2f3762d05d6f1ab2a291cad57d08fd104e6808b6c6278204fa836"},
 ]
 django-ses = [
-    {file = "django-ses-1.0.2.tar.gz", hash = "sha256:fa9ee4d8e81aed720aab1884441cbbd99e41f15f0c7319d4a22599f276cba8ee"},
-    {file = "django_ses-1.0.2-py2.py3-none-any.whl", hash = "sha256:b31f70d1dbb4fd2f92cbabb68cc74c2872da5a0284bed0653c8eaf564c41a1e1"},
+    {file = "django-ses-1.0.3.tar.gz", hash = "sha256:9c0a3e59e1e2424093820fa7cd519aa35f9ba978c26917a97a30c682449f0df6"},
+    {file = "django_ses-1.0.3-py2.py3-none-any.whl", hash = "sha256:45f041acb9f2f8df85f3fddd63b04f1d381982bdc7730a3dc1f88e5795758bdd"},
 ]
 django-templated-email = [
     {file = "django-templated-email-2.3.0.tar.gz", hash = "sha256:536c4e5ae099eabfb9aab36087d4d7799948c654e73da55a744213d086d5bb33"},
