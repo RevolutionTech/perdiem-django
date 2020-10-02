@@ -68,8 +68,10 @@ class PointArtistPercentageBreakdownsAndRevenueReportsToProjectsMigrationTestCas
         # Create a RevenueReport and ArtistPercentageBreakdown
         self.revenue_report = RevenueReportFactoryForMigrationTestCase(amount=1000)
         campaign = self.revenue_report.campaign
-        self.artistpercentagebreakdown = ArtistPercentageBreakdownFactoryForMigrationTestCase(
-            campaign=campaign, percentage=50
+        self.artistpercentagebreakdown = (
+            ArtistPercentageBreakdownFactoryForMigrationTestCase(
+                campaign=campaign, percentage=50
+            )
         )
 
     def testArtistPercentageBreakdownAndRevenueReportPointsToProject(self):

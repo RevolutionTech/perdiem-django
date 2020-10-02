@@ -137,8 +137,8 @@ class ArtistDetailView(FormView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
-        user_has_permission_to_submit_update = self.artist.has_permission_to_submit_update(
-            self.request.user
+        user_has_permission_to_submit_update = (
+            self.artist.has_permission_to_submit_update(self.request.user)
         )
         context.update(
             {

@@ -205,16 +205,20 @@ class BaseConfig(Configuration):
     )
     SOCIAL_AUTH_LOGIN_ERROR_URL = "/"
     SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = values.SecretValue(
-        environ_name="GOOGLE_OAUTH2_KEY", environ_prefix="PERDIEM",
+        environ_name="GOOGLE_OAUTH2_KEY",
+        environ_prefix="PERDIEM",
     )
     SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = values.SecretValue(
-        environ_name="GOOGLE_OAUTH2_SECRET", environ_prefix="PERDIEM",
+        environ_name="GOOGLE_OAUTH2_SECRET",
+        environ_prefix="PERDIEM",
     )
     SOCIAL_AUTH_FACEBOOK_KEY = values.SecretValue(
-        environ_name="FACEBOOK_KEY", environ_prefix="PERDIEM",
+        environ_name="FACEBOOK_KEY",
+        environ_prefix="PERDIEM",
     )
     SOCIAL_AUTH_FACEBOOK_SECRET = values.SecretValue(
-        environ_name="FACEBOOK_SECRET", environ_prefix="PERDIEM",
+        environ_name="FACEBOOK_SECRET",
+        environ_prefix="PERDIEM",
     )
     SOCIAL_AUTH_FACEBOOK_SCOPE = ["email"]
     SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
