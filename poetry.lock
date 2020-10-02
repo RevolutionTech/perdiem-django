@@ -198,7 +198,7 @@ description = "A widget to replace the object_id in a generic relation with a se
 name = "django-gfklookupwidget"
 optional = false
 python-versions = "*"
-version = "1.0.8"
+version = "1.0.9"
 
 [[package]]
 category = "main"
@@ -869,7 +869,7 @@ version = "5.2.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "d16dd7788c89218af6ea909b2d9f0e224b702d396a019938cfc290f348e12e42"
+content-hash = "07c67d3fbd718b844d97a2a518e0336ec92a63c2cbeab711175bdf180e572922"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -1028,7 +1028,7 @@ django-configurations = [
     {file = "django_configurations-2.2-py2.py3-none-any.whl", hash = "sha256:0b93cb7042739e2d69cfc6fb81676bbd3cbb63ea19b02e8b681f4cad3a8aaf1b"},
 ]
 django-gfklookupwidget = [
-    {file = "django-gfklookupwidget-1.0.8.tar.gz", hash = "sha256:1fa7c5e9c56445a79171f669eba2b7581a311cddfb80245e92d725d806e8f90f"},
+    {file = "django-gfklookupwidget-1.0.9.tar.gz", hash = "sha256:7b02e121c30a92634000dd0d98cb4e036e290ca43bbdd7bc0ae64da0732f96fb"},
 ]
 django-ipware = [
     {file = "django-ipware-2.1.0.tar.gz", hash = "sha256:a7c7a8fd019dbdc9c357e6e582f65034e897572fc79a7e467674efa8aef9d00b"},
