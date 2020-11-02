@@ -586,7 +586,7 @@ six = ">=1.5"
 
 [[package]]
 name = "python-dotenv"
-version = "0.14.0"
+version = "0.15.0"
 description = "Add .env support to your django/flask apps in development and deployments"
 category = "main"
 optional = false
@@ -855,7 +855,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "6ddaa7ab73e84652fe5ccc5c3769e2715239a036ece76bcc0e9619154a932c4c"
+content-hash = "e5faa553008764e427c4e352f6f2f79085185c82ed6d1f1978dc28dfb69a9ce9"
 
 [metadata.files]
 appdirs = [
@@ -1194,8 +1194,8 @@ python-dateutil = [
     {file = "python_dateutil-2.8.0-py2.py3-none-any.whl", hash = "sha256:7e6584c74aeed623791615e26efd690f29817a27c73085b78e4bad02493df2fb"},
 ]
 python-dotenv = [
-    {file = "python-dotenv-0.14.0.tar.gz", hash = "sha256:8c10c99a1b25d9a68058a1ad6f90381a62ba68230ca93966882a4dbc3bc9c33d"},
-    {file = "python_dotenv-0.14.0-py2.py3-none-any.whl", hash = "sha256:c10863aee750ad720f4f43436565e4c1698798d763b63234fb5021b6c616e423"},
+    {file = "python-dotenv-0.15.0.tar.gz", hash = "sha256:587825ed60b1711daea4832cf37524dfd404325b7db5e25ebe88c495c9f807a0"},
+    {file = "python_dotenv-0.15.0-py2.py3-none-any.whl", hash = "sha256:0c8d1b80d1a1e91717ea7d526178e3882732420b03f08afea0406db6402e220e"},
 ]
 python-memcached = [
     {file = "python-memcached-1.59.tar.gz", hash = "sha256:a2e28637be13ee0bf1a8b6843e7490f9456fd3f2a4cb60471733c7b5d5557e4f"},
